@@ -31,65 +31,26 @@
     jupyter_resource_req_cpu: "{{jupyter_resource_req_cpu}}"
     jupyter_resource_req_memory: "{{jupyter_resource_req_memory}}"
     nologging: "{{jupyter_nologging}}"
-  when:
-    (jupyter_include | bool) == true
 
 - include: luigi/main.yml
   vars:
     hostname: "{{luigi_hostname}}"
     luigi_resource_req_memory: "{{luigi_resource_req_memory}}"
     luigi_resource_req_cpu: "{{luigi_resource_req_cpu}}"
-  when:
-    (luigi_include | bool) == true
 
-- include: kubernetes-dashboard/main.yml
+- include: gluster-s3.yml
   vars:
-    basic_auth: "{{dashboard_basic_auth}}"
-    hostname: "{{dashboard_hostname}}"
-    nologging: "{{dashboard_nologging}}"
-  when:
-    (dashboard_include | bool) == true
+    glusters3_release_name: "{{glusters3_release_name}}"
+    glusters3_main_pvc_size: "{{glusters3_main_pvc_size}}"
+    glusters3_meta_pvc_size: "{{glusters3_meta_pvc_size}}"
+    glusters3_account: "{{glusters3_account}}"
+    glusters3_user: "{{glusters3_user}}"
+    glusters3_password: "{{glusters3_password}}"
 
-- include: heapster.yml
-  when:
-    (dashboard_include | bool) == true
-
-- include: galaxy.yml
+- include: pachyderm.yml
   vars:
-    galaxy_chart_version: "{{galaxy_chart_version}}"
-    hostname: "{{galaxy_hostname}}"
-    galaxy_image_tag: "{{galaxy_image_tag}}"
-    galaxy_admin_password: "{{galaxy_admin_password}}"
-    galaxy_admin_email: "{{galaxy_admin_email}}"
-    galaxy_api_key: "{{galaxy_api_key}}"
-    galaxy_pvc: "{{galaxy_pvc}}"
-    postgres_pvc: "{{galaxy_postgres_pvc}}"
-    nologging: "{{galaxy_nologging}}"
-  when:
-    (galaxy_include | bool) == true
-
-- include: git_clone_mtbls233.yml
-  when:
-    (jupyter_include | bool) == true
-
-- include: wait_for_http_not_down.yml
-  vars:
-    name: "{{jupyter_hostname}}"
-    url: "http://{{jupyter_hostname}}.{{domain}}"
-  when:
-    (jupyter_include | bool) == true
-
-- include: wait_for_http_not_down.yml
-  vars:
-    name: "{{luigi_hostname}}"
-    url: "http://{{luigi_hostname}}.{{domain}}"
-  when:
-    (luigi_include | bool) == true
-
-- include: wait_for_http_ok.yml
-  vars:
-    name: "{{galaxy_hostname}}"
-    url: "http://{{galaxy_hostname}}.{{domain}}"
-  when:
-    (galaxy_include | bool) == true
+    pachyderm_release_name: "{{pachyderm_release_name}}"
+    pachyderm_etcd_pvc_size: "{{pachyderm_etcd_pvc_size}}"
+    pachyderm_glusters3_accesskey: "{{pachyderm_glusters3_accesskey}}"
+    pachyderm_glusters3_secretkey: "{{pachyderm_glusters3_secretkey}}"
 

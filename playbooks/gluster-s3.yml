@@ -1,0 +1,33 @@
+---
+- hosts: master
+  gather_facts: False
+  vars:
+    nologging: False
+  tasks:
+    - name: add glusters3 chart
+      command: >
+        helm repo add kubenow
+        https://kubenow.github.io/helm-charts/
+    - name: install glusters3
+      command: >
+        helm upgrade --install 
+        --set account="{{ glusters3_account }}",user="{{ glusters3_user }}",password="{{ glusters3_password }}",mainPvcRequest="{{ glusters3_main_pvc_size }}",metaPvcRequest="{{ glusters3_meta_pvc_size }}",hostNetwork=true,defaultBucket.enabled=true,defaultBucket.name=defaultbucket
+        "{{glusters3_release_name}}" kubenow/gluster-s3
+    - name: wait for glusters3 to be Running
+      command: >
+        kubectl get pods --namespace=default
+        -o jsonpath='{.items[?(@.spec.containers[*].name=="gluster-s3")].status.phase}'
+      register: get_phase
+      until: get_phase.stdout | match('^(Running\s)*Running$')
+      # Wait for 10 minutes
+      retries: 120
+      delay: 5
+    - name: wait for glusters3 to be Ready
+      command: >
+        kubectl get pods --namespace=default
+        -o jsonpath='{.items[?(@.spec.containers[*].name=="gluster-s3")].status.containerStatuses[*].ready}'
+      register: get_is_ready
+      until: get_is_ready.stdout | match( '^(true\s)*true$' )
+      # Wait for 10 minutes
+      retries: 120
+      delay: 5
