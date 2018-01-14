@@ -87,19 +87,24 @@ In this configuration file you will need to set:
 - **`TF_VAR_glusters3_password`**: password for the S3 endpoint
 - **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
 - **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
-- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: ``<S3 account>:<S3 user>)``
 - **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-    ./phenomenal.sh deploy aws
+./phenomenal.sh deploy azure
 
-  when deployment is finished then you should be able to reach the services at:
+when deployment is finished then you should be able to reach the services at:
 
-    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-    Luigi          = http://luigi.<your-prefix>.<yourdomain>
-    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+Luigi          = http://luigi.<your-prefix>.<yourdomain>
+Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+
+``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+
+Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -171,20 +176,24 @@ In this configuration file you will need to set:
 - **`TF_VAR_glusters3_password`**: password for the S3 endpoint
 - **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
 - **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
-- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: ``<S3 account>:<S3 user>)``
 - **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
-
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-    ./phenomenal.sh deploy gcp
+./phenomenal.sh deploy azure
 
-  when deployment is finished then you should be able to reach the services at:
+when deployment is finished then you should be able to reach the services at:
 
-    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-    Luigi          = http://luigi.<your-prefix>.<yourdomain>
-    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+Luigi          = http://luigi.<your-prefix>.<yourdomain>
+Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+
+``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+
+Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -254,19 +263,24 @@ In this configuration file you will need to set:
 - **`TF_VAR_glusters3_password`**: password for the S3 endpoint
 - **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
 - **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
-- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: ``<S3 account>:<S3 user>)``
 - **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-    ./phenomenal.sh deploy ostack
+./phenomenal.sh deploy azure
 
-  when deployment is finished then you should be able to reach the services at:
+when deployment is finished then you should be able to reach the services at:
 
-    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-    Luigi          = http://luigi.<your-prefix>.<yourdomain>
-    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+Luigi          = http://luigi.<your-prefix>.<yourdomain>
+Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+
+``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+
+Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -334,7 +348,7 @@ In this configuration file you will need to set:
 - **`TF_VAR_glusters3_password`**: password for the S3 endpoint
 - **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
 - **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
-- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: ``<S3 account>:<S3 user>)``
 - **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
@@ -347,6 +361,11 @@ In this configuration file you will need to set:
     Jupyter        = http://notebook.<your-prefix>.<yourdomain>
     Luigi          = http://luigi.<your-prefix>.<yourdomain>
     Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+    Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+
+``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+
+Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
