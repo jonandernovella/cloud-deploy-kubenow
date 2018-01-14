@@ -94,8 +94,6 @@ In this configuration file you will need to set:
 
     ./phenomenal.sh deploy aws
 
-when deployment is finished then you should be able to reach the services at:
-
   when deployment is finished then you should be able to reach the services at:
 
     Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
@@ -185,8 +183,6 @@ In this configuration file you will need to set:
 
     ./phenomenal.sh deploy gcp
 
-when deployment is finished then you should be able to reach the services at:
-
   when deployment is finished then you should be able to reach the services at:
 
     Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
@@ -274,8 +270,6 @@ In this configuration file you will need to set:
 
     ./phenomenal.sh deploy ostack
 
-when deployment is finished then you should be able to reach the services at:
-
   when deployment is finished then you should be able to reach the services at:
 
     Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
@@ -360,8 +354,6 @@ In this configuration file you will need to set:
 **Once you are done with your settings you are ready to deploy the cluster:**
 
     ./phenomenal.sh deploy azure
-
-  when deployment is finished then you should be able to reach the services at:
 
   when deployment is finished then you should be able to reach the services at:
 
