@@ -78,6 +78,17 @@ In this configuration file you will need to set:
 *Jupyter*
 - **`TF_VAR_jupyter_password`**: password for your notebook
 
+*Pachyderm + Gluster-S3 (optional)*
+- **`TF_VAR_glusters3_release_name`**: a release name for the Gluster-S3 service
+- **`TF_VAR_glusters3_main_pvc_size`**: storage dedicated for the Gluster-S3 service (In GB)
+- **`TF_VAR_glusters3_meta_pvc_size`**: storage dedicated for the metadata of the Gluster-S3 service (In GB, rerely changed)
+- **`TF_VAR_glusters3_account`**: account name for the S3 endpoint
+- **`TF_VAR_glusters3_user`**: user name for the S3 endpoint
+- **`TF_VAR_glusters3_password`**: password for the S3 endpoint
+- **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
+- **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
@@ -151,7 +162,17 @@ In this configuration file you will need to set:
 *Jupyter*
 - **`TF_VAR_jupyter_password`**: password for your notebook
 
-
+*Pachyderm + Gluster-S3 (optional)*
+- **`TF_VAR_glusters3_release_name`**: a release name for the Gluster-S3 service
+- **`TF_VAR_glusters3_main_pvc_size`**: storage dedicated for the Gluster-S3 service (In GB)
+- **`TF_VAR_glusters3_meta_pvc_size`**: storage dedicated for the metadata of the Gluster-S3 service (In GB, rerely changed)
+- **`TF_VAR_glusters3_account`**: account name for the S3 endpoint
+- **`TF_VAR_glusters3_user`**: user name for the S3 endpoint
+- **`TF_VAR_glusters3_password`**: password for the S3 endpoint
+- **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
+- **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 
 **Once you are done with your settings you are ready to deploy the cluster:**
@@ -224,7 +245,17 @@ In this configuration file you will need to set:
 *Jupyter*
 - **`TF_VAR_jupyter_password`**: password for your notebook
 
-
+*Pachyderm + Gluster-S3 (optional)*
+- **`TF_VAR_glusters3_release_name`**: a release name for the Gluster-S3 service
+- **`TF_VAR_glusters3_main_pvc_size`**: storage dedicated for the Gluster-S3 service (In GB)
+- **`TF_VAR_glusters3_meta_pvc_size`**: storage dedicated for the metadata of the Gluster-S3 service (In GB, rerely changed)
+- **`TF_VAR_glusters3_account`**: account name for the S3 endpoint
+- **`TF_VAR_glusters3_user`**: user name for the S3 endpoint
+- **`TF_VAR_glusters3_password`**: password for the S3 endpoint
+- **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
+- **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
@@ -294,6 +325,17 @@ In this configuration file you will need to set:
 *Jupyter*
 - **`TF_VAR_jupyter_password`**: password for your notebook
 
+*Pachyderm + Gluster-S3 (optional)*
+- **`TF_VAR_glusters3_release_name`**: a release name for the Gluster-S3 service
+- **`TF_VAR_glusters3_main_pvc_size`**: storage dedicated for the Gluster-S3 service (In GB)
+- **`TF_VAR_glusters3_meta_pvc_size`**: storage dedicated for the metadata of the Gluster-S3 service (In GB, rerely changed)
+- **`TF_VAR_glusters3_account`**: account name for the S3 endpoint
+- **`TF_VAR_glusters3_user`**: user name for the S3 endpoint
+- **`TF_VAR_glusters3_password`**: password for the S3 endpoint
+- **`TF_VAR_pachyderm_release_name`**: a release name for the Pachyderm service
+- **`TF_VAR_pachyderm_etcd_pvc_size`**: storage dedicated for etcd (In GB)
+- **`TF_VAR_pachyderm_glusters3_accesskey`**: access key of the S3 endpoint (It follows the following pattern: <S3 account>:<S3 user>)
+- **`TF_VAR_pachyderm_glusters3_secretkey`**: password of the S3 endpoint
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
