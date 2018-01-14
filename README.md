@@ -92,19 +92,21 @@ In this configuration file you will need to set:
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-./phenomenal.sh deploy azure
+    ./phenomenal.sh deploy aws
 
 when deployment is finished then you should be able to reach the services at:
 
-Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-Luigi          = http://luigi.<your-prefix>.<yourdomain>
-Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
-Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+  when deployment is finished then you should be able to reach the services at:
 
-``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+    Luigi          = http://luigi.<your-prefix>.<yourdomain>
+    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+    Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
 
-Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
+    curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb
+
+  Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -181,19 +183,21 @@ In this configuration file you will need to set:
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-./phenomenal.sh deploy azure
+    ./phenomenal.sh deploy gcp
 
 when deployment is finished then you should be able to reach the services at:
 
-Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-Luigi          = http://luigi.<your-prefix>.<yourdomain>
-Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
-Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+  when deployment is finished then you should be able to reach the services at:
 
-``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+    Luigi          = http://luigi.<your-prefix>.<yourdomain>
+    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+    Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
 
-Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
+    curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb
+
+  Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -268,19 +272,21 @@ In this configuration file you will need to set:
 
 **Once you are done with your settings you are ready to deploy the cluster:**
 
-./phenomenal.sh deploy azure
+    ./phenomenal.sh deploy ostack
 
 when deployment is finished then you should be able to reach the services at:
 
-Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
-Jupyter        = http://notebook.<your-prefix>.<yourdomain>
-Luigi          = http://luigi.<your-prefix>.<yourdomain>
-Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
-Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
+  when deployment is finished then you should be able to reach the services at:
 
-``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+    Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
+    Jupyter        = http://notebook.<your-prefix>.<yourdomain>
+    Luigi          = http://luigi.<your-prefix>.<yourdomain>
+    Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
+    Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
 
-Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
+    curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb
+
+  Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
@@ -357,15 +363,17 @@ In this configuration file you will need to set:
 
   when deployment is finished then you should be able to reach the services at:
 
+  when deployment is finished then you should be able to reach the services at:
+
     Galaxy         = http://galaxy.<your-prefix>.<yourdomain>
     Jupyter        = http://notebook.<your-prefix>.<yourdomain>
     Luigi          = http://luigi.<your-prefix>.<yourdomain>
     Kube-dashboard = http://dashboard.<your-prefix>.<yourdomain>
     Pachyderm      = by ssh-ing onto your master node, and installing the Pachyderm client:
 
-``console$ curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb``
+    curl -o /tmp/pachctl.deb -L https://github.com/pachyderm/pachyderm/releases/download/v1.6.6/pachctl_1.6.6_amd64.deb && sudo dpkg -i /tmp/pachctl.deb
 
-Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
+  Please note that the client version should correspond with the pachd service version. For more information please consult: http://pachyderm.readthedocs.io/en/latest/index.html. You can see an example on how to create pipelines here: https://github.com/pachyderm/pachyderm/tree/master/doc/examples/gatk
 
   and to destroy use:
 
