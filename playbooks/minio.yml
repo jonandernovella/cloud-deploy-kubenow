@@ -1,0 +1,29 @@
+---
+- hosts: master
+  gather_facts: False
+  vars:
+    nologging: False
+  tasks:
+    - name: install minio
+      command: >
+        helm upgrade --install 
+        --set accessKey="{{ minio_accesskey }}",secretKey="{{ minio_secretkey }}",mode=shared,replicas=4,serviceType=ClusterIP,persistence.size="{{ minio_pvc_size }}",persistence.accessMode=ReadWriteMany,defaultBucket.enabled=true,defaultBucket.name=defaultbucket
+        "{{ minio_release_name }}" stable/minio
+    - name: wait for minio to be Running
+      command: >
+        kubectl get pods --namespace=default
+        -o jsonpath='{.items[?(@.spec.containers[*].name=="minio")].status.phase}'
+      register: get_phase
+      until: get_phase.stdout | match('^(Running\s)*Running$')
+      # Wait for 10 minutes
+      retries: 120
+      delay: 5
+    - name: wait for minio to be Ready
+      command: >
+        kubectl get pods --namespace=default
+        -o jsonpath='{.items[?(@.spec.containers[*].name=="minio")].status.containerStatuses[*].ready}'
+      register: get_is_ready
+      until: get_is_ready.stdout | match( '^(true\s)*true$' )
+      # Wait for 10 minutes
+      retries: 120
+      delay: 5

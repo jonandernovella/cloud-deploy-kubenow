@@ -38,21 +38,19 @@
     luigi_resource_req_memory: "{{luigi_resource_req_memory}}"
     luigi_resource_req_cpu: "{{luigi_resource_req_cpu}}"
 
-- include: gluster-s3.yml
+- include: minio.yml
   vars:
-    glusters3_release_name: "{{glusters3_release_name}}"
-    glusters3_main_pvc_size: "{{glusters3_main_pvc_size}}"
-    glusters3_meta_pvc_size: "{{glusters3_meta_pvc_size}}"
-    glusters3_account: "{{glusters3_account}}"
-    glusters3_user: "{{glusters3_user}}"
-    glusters3_password: "{{glusters3_password}}"
+    minio_release_name: "{{minio_release_name}}"
+    minio_pvc_size: "{{minio_pvc_size}}"
+    minio_accesskey: "{{minio_accesskey}}"
+    minio_secretkey: "{{minio_secretkey}}"
 
 - include: pachyderm.yml
   vars:
     pachyderm_release_name: "{{pachyderm_release_name}}"
     pachyderm_etcd_pvc_size: "{{pachyderm_etcd_pvc_size}}"
-    pachyderm_glusters3_accesskey: "{{pachyderm_glusters3_accesskey}}"
-    pachyderm_glusters3_secretkey: "{{pachyderm_glusters3_secretkey}}"
+    pachyderm_minio_accesskey: "{{pachyderm_minio_accesskey}}"
+    pachyderm_minio_secretkey: "{{pachyderm_minio_secretkey}}"
 
 - include: kubernetes-dashboard/main.yml
   vars:

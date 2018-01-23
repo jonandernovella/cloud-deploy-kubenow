@@ -179,14 +179,12 @@ ansible-playbook -i "$ansible_inventory_file" \
                  -e "galaxy_pvc=galaxy-pvc" \
                  -e "galaxy_postgres_pvc=false" \
                  -e "galaxy_nologging=$no_sensitive_logging" \
-                 -e "glusters3_release_name=$TF_VAR_glusters3_release_name" \
-                 -e "glusters3_main_pvc_size=$TF_VAR_glusters3_main_pvc_size" \
-                 -e "glusters3_meta_pvc_size=$TF_VAR_glusters3_meta_pvc_size" \
-                 -e "glusters3_account=$TF_VAR_glusters3_account" \
-                 -e "glusters3_user=$TF_VAR_glusters3_user" \
-                 -e "glusters3_password=$TF_VAR_glusters3_password" \
+                 -e "minio_release_name=$TF_VAR_minio_release_name" \
+                 -e "minio_pvc_size=$TF_VAR_minio_pvc_size" \
+                 -e "minio_accesskey=$TF_VAR_minio_accesskey" \
+                 -e "minio_secretkey=$TF_VAR_minio_secretkey" \
                  -e "pachyderm_release_name=$TF_VAR_pachyderm_release_name" \
                  -e "pachyderm_etcd_pvc_size=$TF_VAR_pachyderm_etcd_pvc_size" \
-                 -e "pachyderm_glusters3_accesskey=$TF_VAR_pachyderm_glusters3_accesskey" \
-                 -e "pachyderm_glusters3_secretkey=$TF_VAR_pachyderm_glusters3_secretkey" \
+                 -e "pachyderm_minio_accesskey=$TF_VAR_pachyderm_minio_accesskey" \
+                 -e "pachyderm_minio_secretkey=$TF_VAR_pachyderm_minio_secretkey" \
                  "$PORTAL_APP_REPO_FOLDER/playbooks/install-phenomenal.yml" 

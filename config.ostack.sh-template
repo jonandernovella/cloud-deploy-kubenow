@@ -57,16 +57,14 @@ export TF_VAR_jupyter_password="password"
 export TF_VAR_dashboard_username="admin"
 export TF_VAR_dashboard_password="password"
 
-# Gluster-S3
-# export TF_VAR_glusters3_release_name="my-glusters3"
-# export TF_VAR_glusters3_main_pvc_size="100G"
-# export TF_VAR_glusters3_meta_pvc_size="10G"
-# export TF_VAR_glusters3_account="myaccount"
-# export TF_VAR_glusters3_user="myuser"
-# export TF_VAR_glusters3_password="mypassword"
+# Minio
+# export TF_VAR_minio_release_name="my-minio"
+# export TF_VAR_minio_pvc_size="100G"
+# export TF_VAR_minio_accesskey="myaccesskey"
+# export TF_VAR_minio_secretkey="mysecretkey"
 
 # Pachyderm
 # export TF_VAR_pachyderm_release_name="my-pachyderm"
 # export TF_VAR_pachyderm_etcd_pvc_size="20G"
-# export TF_VAR_pachyderm_glusters3_accesskey="myaccount:myuser"
-# export TF_VAR_pachyderm_glusters3_secretkey="mypassword"
+# export TF_VAR_pachyderm_minio_accesskey="myaccesskey"
+# export TF_VAR_pachyderm_minio_secretkey="mysecretkey"
