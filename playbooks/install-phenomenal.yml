@@ -48,6 +48,7 @@
 - include: pachyderm.yml
   vars:
     pachyderm_release_name: "{{pachyderm_release_name}}"
+    minio_release_name: "{{minio_release_name}}"
     pachyderm_etcd_pvc_size: "{{pachyderm_etcd_pvc_size}}"
     pachyderm_minio_accesskey: "{{pachyderm_minio_accesskey}}"
     pachyderm_minio_secretkey: "{{pachyderm_minio_secretkey}}"
